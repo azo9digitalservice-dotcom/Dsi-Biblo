@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bibliothèque Numérique - Collection Scientifique & Éditoriale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- EN-TÊTE ET NAVIGATION -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-logo">DS</div>
+        <span class="brand-title">DSI Academy</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#collection" class="nav-link active">Collection</a>
+        <a href="#collection" class="btn-explore">Explorer les 10 livres</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+  <!-- VUE COLLECTION (existante, inchangée) -->
+  <div id="view-collection">
+    <!-- HERO SECTION ÉDITORIALE -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <span>Collection Scientifique & Éditoriale</span>
+          </div>
+          <h1 class="hero-title">Bibliothèque Numérique Spécialisée</h1>
+          <p class="hero-description">
+            Consultez et téléchargez librement les 10 ouvrages de référence en Mathématiques, Physique et Sciences Politique de notre fonds documentaire.
+          </p>
+          <div class="hero-actions">
+            <a href="#collection" class="btn-explore" style="padding: 0.8rem 1.6rem; font-size: 0.95rem;">Accéder à la collection</a>
+          </div>
+        </div>
+
+        <!-- PRÉSENTATION VISUELLE DES COUVERTURES EN STACK -->
+        <div class="hero-showcase" aria-hidden="true">
+          <div class="hero-book-stack">
+            <div class="hero-book-card">
+              <img src="1000254897.png" alt="Mathématiques pour les sciences de la vie">
+            </div>
+            <div class="hero-book-card">
+              <img src="1000254898.png" alt="Physique PCSI Tout-en-un">
+            </div>
+            <div class="hero-book-card">
+              <img src="1000254899.png" alt="Mounier L'engagement politique">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BARRE DE RECHERCHE ET FILTRES DE NIVEAU/DISCIPLINE -->
+    <section class="container" id="collection">
+      <div class="controls-bar">
+        <div class="search-box">
+          <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <input type="text" id="searchInput" class="search-input" placeholder="Rechercher par titre, auteur, éditeur...">
+        </div>
+
+        <div class="filter-pills" id="filterContainer">
+          <button class="pill-btn active" data-filter="all">Tous (10)</button>
+          <button class="pill-btn" data-filter="Maths">Mathématiques</button>
+          <button class="pill-btn" data-filter="Physique">Physique</button>
+          <button class="pill-btn" data-filter="Politique">Philosophie / Politique</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION DES 10 LIVRES (COMPOSITION ASYMÉTRIQUE) -->
+    <section class="container books-section">
+      <div class="section-header">
+        <h2 class="section-title">Ouvrages de la Collection</h2>
+        <p class="section-subtitle">Sélectionnez un livre pour afficher sa fiche complète ou lancer le téléchargement.</p>
+      </div>
+
+      <div class="books-grid" id="booksGrid">
+        <!-- Généré dynamiquement en JavaScript à partir des données exactes -->
+      </div>
+    </section>
+  </div>
+  <!-- /VUE COLLECTION -->
+
+  <!-- VUE PARCOURS DE TÉLÉCHARGEMENT (WhatsApp / transition / fiche livre / erreurs) -->
+  <!-- Contenu injecté dynamiquement par le routeur JavaScript selon l'URL (#/...) -->
+  <div id="view-flow" hidden></div>
+  </main>
+
+  <!-- MODALE DE VUE DÉTAILLÉE -->
+  <div class="modal-overlay" id="bookModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-container">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Fermer la vue détaillée">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <div class="modal-body" id="modalContent">
+        <!-- Injecté dynamiquement par JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong style="color: var(--text-primary); font-family: var(--font-title);">ATHENAEUM</strong> — Bibliothèque Numérique d'Ouvrages Scientifiques
+      </div>
+      <div>
+        © 2026 Tous droits réservés.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
