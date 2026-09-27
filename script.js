@@ -5,7 +5,7 @@
     // Tant qu'elle est vide, la page d'invitation affiche un message
     // d'erreur propre au lieu d'un lien cassé.
     const CONFIG = {
-      whatsappLink: "" // ex: "https://chat.whatsapp.com/VOTRE_CODE_ICI"
+      whatsappLink: "https://chat.whatsapp.com/H1ciMxRnW7s7Zw2xPMJf4S" // ex: "https://chat.whatsapp.com/VOTRE_CODE_ICI"
     };
 
     // Clé localStorage dédiée au déblocage WhatsApp.
